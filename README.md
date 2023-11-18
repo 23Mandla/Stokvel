@@ -1,6 +1,8 @@
 # Stokvel coming soon!
 
-This is a stokvel webpage I'm working on using Nextjs.
+## This is a stokvel webpage I'm working on using Nextjs.
+
+![stokeve image](stokvel.png)
 
 ## what the app will do
 
