@@ -1,6 +1,6 @@
 # Stokvel coming soon!
 
-This is a stokvel webpage I'm working on using Nextjs.
+This is a stokvel webpage I'm working on using Nextjs and mongodb.
 
 ## what the app will do
 
