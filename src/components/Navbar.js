@@ -34,7 +34,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed text-white top-0 flex shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] w-screen justify-between px-20 py-6 z-10 bg-[#36442A]">
+    <nav className="fixed text-white top-0 flex shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] w-screen justify-between px-20 py-6 z-10 bg-[#4B5320]">
       <Image src={logo} alt="" height={50} width={50} className="rounded"/>
       <div className="flex gap-14">
         <ul className="relative flex right-10 gap-8">
@@ -51,7 +51,7 @@ export default function Navbar() {
               About Us
             </Link>
             <div
-              class={`absolute bg-[#36442A] p-2 mt-8 space-y-2 h-screen w-screen transition-all duration-500 ${
+              className={`absolute bg-[#556B2F] p-2 mt-8 space-y-2 h-screen w-screen transition-all duration-500 ${
                 isAboutHovered ? "left-0 opacity-100" : "left-full opacity-0"
               }`}
             >
@@ -61,7 +61,7 @@ export default function Navbar() {
           <li className="group relative">
             <Link href="/Contact-us" onMouseEnter={handleConatctHover} onMouseLeave={handleConatctHover} className="relative border-b-2 pb-1 border-transparent hover:border-b-2 hover:border-white">Contact-us</Link>
             <div
-              class={`absolute bg-[#36442A] p-2 mt-8 space-y-2 h-screen w-screen transition-all duration-500  ${
+              class={`absolute bg-[#556B2F] p-2 mt-8 space-y-2 h-screen w-screen transition-all duration-500  ${
                 isContactHovered ? "left-0 opacity-100" : "left-full opacity-0"
               }`}
             >
