@@ -13,7 +13,7 @@ export async function middleware(request) {
   // Get the path to protect
   const isProtectedPath = path === "/profile";
 
-  // If it's a protected path and the user is not authenticated, redirect to the login page
+  // If it's a protected path and the user is authenticated, redirect to the profile page
   if (isPublicPath && token) {
     return NextResponse.redirect(new URL("/profile", request.nextUrl));
   }

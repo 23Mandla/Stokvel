@@ -61,7 +61,7 @@ export default function Navbar() {
           <li className="group relative">
             <Link href="/Contact-us" onMouseEnter={handleConatctHover} onMouseLeave={handleConatctHover} className="relative border-b-2 pb-1 border-transparent hover:border-b-2 hover:border-white">Contact-us</Link>
             <div
-              class={`absolute bg-[#556B2F] p-2 mt-8 space-y-2 h-screen w-screen transition-all duration-500  ${
+              className={`absolute bg-[#556B2F] p-2 mt-8 space-y-2 h-screen w-screen transition-all duration-500  ${
                 isContactHovered ? "left-0 opacity-100" : "left-full opacity-0"
               }`}
             >
