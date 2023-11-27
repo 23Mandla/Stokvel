@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import profile from "/public/profile.png";
 import axios from "axios";
-import Contribution from "@/icons/contribution";
-
+import Contribution from "@/icons/Contribution";
+import Statement from "@/icons/Statement";
 
 export default function ProfilePage() {
   const [userName, setUserName] = useState("Guest");
@@ -19,12 +19,12 @@ export default function ProfilePage() {
           "http://localhost:3000/api/users/profile"
         );
         const userData = response.data;
-        setUserName(userData.name)
-        setUserSurname(userData.surname)
+        setUserName(userData.name);
+        setUserSurname(userData.surname);
       } catch (error) {}
     };
 
-    userName()
+    userName();
   }, []);
 
   return (
@@ -38,11 +38,20 @@ export default function ProfilePage() {
             height={50}
             className="rounded-full m-auto"
           />
-          <p className="text-center text-white">{userName} {userSurname}</p>
+          <p className="text-center text-white">
+            {userName} {userSurname}
+          </p>
         </div>
         <div className="border border-gray-600 m-1 rounded-sm h-full text-sm p-3 space-y-3">
-          <h1> <Contribution /> contributions</h1>
-          <h1>  Statements</h1>
+          <div className="flex items-center gap-2">
+            <Contribution />
+            <h1>contributions</h1>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Statement />
+            <h1> Statements</h1>
+          </div>
         </div>
       </div>
 

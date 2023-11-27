@@ -9,7 +9,6 @@ export async function GET(request) {
     try {
       const decodedToken = Jwt.verify(token, process.env.SECRETE_TOKEN);
       const user = await User.findById(decodedToken.id);
-      console.log(user)
       if (!user) {
         return NextResponse.status(404).json({ error: "User not found" });
       }
