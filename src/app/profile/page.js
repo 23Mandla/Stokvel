@@ -74,6 +74,10 @@ export default function ProfilePage() {
           </li>
         </ul>
       </div>
+
+      <div className="absolute flex w-20 h-20 bottom-5 right-5 bg-[#4B5320] p-5 rounded-full cursor-pointer items-center justify-center">
+        CHAT
+      </div>
     </div>
   );
 }
