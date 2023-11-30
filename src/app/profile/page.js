@@ -10,7 +10,7 @@ import Statement from "@/icons/Statement";
 
 export default function ProfilePage() {
   const [userName, setUserName] = useState("Guest");
-  const [userSurname, setUserSurname] = useState("Guest");
+  const [userSurname, setUserSurname] = useState("");
 
   useEffect(() => {
     const userName = async () => {
@@ -43,12 +43,12 @@ export default function ProfilePage() {
           </p>
         </div>
         <div className="border border-gray-600 m-1 rounded-sm h-full text-sm p-3 space-y-3">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer">
             <Contribution />
             <h1>contributions</h1>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer">
             <Statement />
             <h1> Statements</h1>
           </div>
