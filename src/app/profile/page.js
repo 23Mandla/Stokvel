@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import profile from "/public/profile.png";
 import axios from "axios";
 import Contribution from "@/icons/Contribution";
@@ -55,24 +54,19 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      <div className="col-span-6">
-        <ul className=" flex gap-8 border-b border-b-gray-600 p-3 pl-16">
-          <li>
-            <Link href="">Portfolio</Link>
-          </li>
-          <li>
-            <Link href="">Members</Link>
-          </li>
-          <li>
-            <Link href="">Perfomance</Link>
-          </li>
-          <li>
-            <Link href="">Events</Link>
-          </li>
-          <li>
-            <Link href="">Chat</Link>
-          </li>
-        </ul>
+      <div className="p-20 gap-x-10 gap-y-16 grid grid-cols-2 col-span-6">
+        <div className="border-2 border-[#286b29] rounded-sm text-center p-2 cursor-pointer">
+          <h1>Portfolio</h1>
+        </div>
+        <div className="border-2 border-[#286b29] rounded-sm text-center p-2 cursor-pointer">
+          <h1>Members</h1>
+        </div >
+        <div className="border-2 border-[#286b29] rounded-sm text-center p-2 cursor-pointer">
+          <h1>Perfomance</h1>
+        </div >
+        <div className="border-2 border-[#286b29] rounded-sm text-center p-2 cursor-pointer">
+          <h1>Events</h1>
+        </div >
       </div>
 
       <div className="absolute flex w-20 h-20 bottom-5 right-5 bg-[#4B5320] p-5 rounded-full cursor-pointer items-center justify-center">
