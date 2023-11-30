@@ -6,10 +6,12 @@ import profile from "/public/profile.png";
 import axios from "axios";
 import Contribution from "@/icons/Contribution";
 import Statement from "@/icons/Statement";
+import Portfolio from "@/components/Portfolio";
 
 export default function ProfilePage() {
   const [userName, setUserName] = useState("Guest");
   const [userSurname, setUserSurname] = useState("");
+  const [component, setComponent] = useState(null);
 
   useEffect(() => {
     const userName = async () => {
@@ -20,11 +22,25 @@ export default function ProfilePage() {
         const userData = response.data;
         setUserName(userData.name);
         setUserSurname(userData.surname);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     userName();
   }, []);
+
+  //handle component rendering
+  const handleComponentRender = (component) => {
+    setComponent(component);
+  };
+
+  const renderComponent = () => {
+    switch (component) {
+      case "portfolio":
+        return <Portfolio />;
+    }
+  };
 
   return (
     <div className="grid grid-cols-7 h-screen w-full text-white bg-slate-800 pt-20 gap-1">
@@ -54,24 +70,28 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      <div className="p-20 gap-x-10 gap-y-16 grid grid-cols-2 col-span-6">
-        <div className="border-2 border-[#286b29] rounded-sm text-center p-2 cursor-pointer">
+      <div className="p-20 gap-x-10 gap-y-14 grid grid-cols-2 col-span-6">
+        <div
+          className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer"
+          onClick={() => handleComponentRender("portfolio")}
+        >
           <h1>Portfolio</h1>
         </div>
-        <div className="border-2 border-[#286b29] rounded-sm text-center p-2 cursor-pointer">
+        <div className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer">
           <h1>Members</h1>
-        </div >
-        <div className="border-2 border-[#286b29] rounded-sm text-center p-2 cursor-pointer">
+        </div>
+        <div className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer">
           <h1>Perfomance</h1>
-        </div >
-        <div className="border-2 border-[#286b29] rounded-sm text-center p-2 cursor-pointer">
+        </div>
+        <div className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer">
           <h1>Events</h1>
-        </div >
+        </div>
       </div>
 
-      <div className="absolute flex w-20 h-20 bottom-5 right-5 bg-[#4B5320] p-5 rounded-full cursor-pointer items-center justify-center">
+      <div className="absolute flex w-20 h-20 bottom-5 right-5 bg-[#4B5320] p-5 rounded-full items-center justify-center cursor-pointer">
         CHAT
       </div>
+      {/*<div>{renderComponent()}</div>*/}
     </div>
   );
 }
