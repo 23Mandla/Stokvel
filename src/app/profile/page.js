@@ -8,6 +8,7 @@ import Contribution from "@/icons/Contribution";
 import Statement from "@/icons/Statement";
 import Portfolio from "@/components/Portfolio";
 import Members from "@/components/Members";
+import Performance from "@/components/Performance";
 
 export default function ProfilePage() {
   const [userName, setUserName] = useState("Guest");
@@ -42,7 +43,8 @@ export default function ProfilePage() {
         return <Portfolio />;
       case "members":
         return <Members />
-        
+      case "peformance":
+        return <Performance />
     }
   };
 
