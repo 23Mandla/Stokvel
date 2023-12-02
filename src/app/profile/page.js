@@ -7,6 +7,7 @@ import axios from "axios";
 import Contribution from "@/icons/Contribution";
 import Statement from "@/icons/Statement";
 import Portfolio from "@/components/Portfolio";
+import Members from "@/components/Members";
 
 export default function ProfilePage() {
   const [userName, setUserName] = useState("Guest");
@@ -39,6 +40,9 @@ export default function ProfilePage() {
     switch (component) {
       case "portfolio":
         return <Portfolio />;
+      case "members":
+        return <Members />
+        
     }
   };
 
