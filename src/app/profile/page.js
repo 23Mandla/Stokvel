@@ -9,6 +9,7 @@ import Statement from "@/icons/Statement";
 import Portfolio from "@/components/Portfolio";
 import Members from "@/components/Members";
 import Performance from "@/components/Performance";
+import Events from "@/components/Events";
 
 export default function ProfilePage() {
   const [userName, setUserName] = useState("Guest");
@@ -42,9 +43,11 @@ export default function ProfilePage() {
       case "portfolio":
         return <Portfolio />;
       case "members":
-        return <Members />
+        return <Members />;
       case "peformance":
-        return <Performance />
+        return <Performance />;
+      case "events":
+        return <Events />;
     }
   };
 
@@ -83,13 +86,22 @@ export default function ProfilePage() {
         >
           <h1>Portfolio</h1>
         </div>
-        <div className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer">
+        <div
+          className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer"
+          onClick={() => handleComponentRender("members")}
+        >
           <h1>Members</h1>
         </div>
-        <div className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer">
+        <div
+          className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer"
+          onClick={() => handleComponentRender("performance")}
+        >
           <h1>Perfomance</h1>
         </div>
-        <div className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer">
+        <div
+          className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer"
+          onClick={() => handleComponentRender("events")}
+        >
           <h1>Events</h1>
         </div>
       </div>
