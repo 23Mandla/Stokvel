@@ -44,7 +44,7 @@ export default function ProfilePage() {
         return <Portfolio />;
       case "members":
         return <Members />;
-      case "peformance":
+      case "performance":
         return <Performance />;
       case "events":
         return <Events />;
@@ -54,7 +54,7 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="grid grid-cols-7 h-screen w-full text-white bg-slate-800 pt-20 gap-1">
+    <div className="grid grid-cols-7 h-screen w-full text-white bg-slate-800 pt-20 gap-1 overflow-hidden">
       <div className="bg-[#28282B] col-span-1 pt-3 border-r border-gray-600 overflow-hidden">
         <div className=" flex flex-col justify-center gap-2 cursor-pointer m-auto border-b border-b-gray-600 rounded-sm p-2">
           <Image
@@ -81,7 +81,7 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      <div>
+      <div className="">
         <ul className="border-b border-gray-500 flex gap-10 pl-16 p-3 w-screen">
           <li
             className="cursor-pointer"
@@ -108,7 +108,7 @@ export default function ProfilePage() {
             <h1>Events</h1>
           </li>
         </ul>
-        {/*<div>{renderComponent()}</div>*/}
+        {<div className="pt-16 w-screen h-full pl-14">{renderComponent()}</div>}
       </div>
 
       <div className="absolute flex w-20 h-20 bottom-5 right-5 bg-[#4B5320] p-5 rounded-full items-center justify-center cursor-pointer">
