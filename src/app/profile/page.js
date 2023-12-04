@@ -48,6 +48,8 @@ export default function ProfilePage() {
         return <Performance />;
       case "events":
         return <Events />;
+      default:
+        return null; //return a user landing page
     }
   };
 
@@ -79,37 +81,39 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      <div className="p-20 gap-x-10 gap-y-14 grid grid-cols-2 col-span-6">
-        <div
-          className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer"
-          onClick={() => handleComponentRender("portfolio")}
-        >
-          <h1>Portfolio</h1>
-        </div>
-        <div
-          className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer"
-          onClick={() => handleComponentRender("members")}
-        >
-          <h1>Members</h1>
-        </div>
-        <div
-          className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer"
-          onClick={() => handleComponentRender("performance")}
-        >
-          <h1>Perfomance</h1>
-        </div>
-        <div
-          className="border-2 border-[#286b29] rounded-md text-center p-2 cursor-pointer"
-          onClick={() => handleComponentRender("events")}
-        >
-          <h1>Events</h1>
-        </div>
+      <div>
+        <ul className="border-b border-gray-500 flex gap-10 pl-16 p-3 w-screen">
+          <li
+            className="cursor-pointer"
+            onClick={() => handleComponentRender("portfolio")}
+          >
+            <h1>Portfolio</h1>
+          </li>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleComponentRender("members")}
+          >
+            <h1>Members</h1>
+          </li>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleComponentRender("performance")}
+          >
+            <h1>Perfomance</h1>
+          </li>
+          <li
+            className="cursor-pointer"
+            onClick={() => handleComponentRender("events")}
+          >
+            <h1>Events</h1>
+          </li>
+        </ul>
+        {/*<div>{renderComponent()}</div>*/}
       </div>
 
       <div className="absolute flex w-20 h-20 bottom-5 right-5 bg-[#4B5320] p-5 rounded-full items-center justify-center cursor-pointer">
         CHAT
       </div>
-      {/*<div>{renderComponent()}</div>*/}
     </div>
   );
 }
