@@ -16,9 +16,8 @@ export async function GET(request) {
       return NextResponse.json({
         surname: user.surname,
         name: user.name,
+        email: user.email,
       });
-
-
     } catch (error) {
       console.log("Token verification error:", error);
       return NextResponse.status(404).json({

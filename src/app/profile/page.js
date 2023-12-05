@@ -14,6 +14,7 @@ import Events from "@/components/Events";
 export default function ProfilePage() {
   const [userName, setUserName] = useState("Guest");
   const [userSurname, setUserSurname] = useState("");
+  const [userData, setUserData] = useState(null);
   const [component, setComponent] = useState(null);
 
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function ProfilePage() {
         const userData = response.data;
         setUserName(userData.name);
         setUserSurname(userData.surname);
+        setUserData(userData);
       } catch (error) {
         console.log(error);
       }
@@ -41,7 +43,7 @@ export default function ProfilePage() {
   const renderComponent = () => {
     switch (component) {
       case "portfolio":
-        return <Portfolio />;
+        return <Portfolio userData={userData} />;
       case "members":
         return <Members />;
       case "performance":
