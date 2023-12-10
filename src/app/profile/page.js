@@ -104,10 +104,22 @@ export default function ProfilePage() {
             <h1>Perfomance</h1>
           </li>
           <li
-            className="cursor-pointer"
+            className="cursor-pointer mr-40"
             onClick={() => handleComponentRender("events")}
           >
             <h1>Events</h1>
+          </li>
+          <li
+            className="cursor-pointer"
+            
+          >
+            <h1>+200 members</h1>
+          </li>
+          <li
+            className="cursor-pointer"
+            
+          >
+            <h1>+R200 contributions</h1>
           </li>
         </ul>
         {<div className="pt-16 w-screen h-full pl-14">{renderComponent()}</div>}
