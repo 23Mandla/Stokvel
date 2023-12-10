@@ -7,7 +7,7 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import logo from "/public/logo.jpg"
+import logo from "/public/logo.jpg";
 
 export default function Navbar() {
   const [isAboutHovered, setAboutIsHovered] = useState(false);
@@ -35,11 +35,16 @@ export default function Navbar() {
 
   return (
     <nav className="fixed text-white top-0 flex shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] w-screen justify-between px-20 py-6 z-10 bg-[#4B5320]">
-      <Image src={logo} alt="" height={50} width={50} className="rounded"/>
+      <Image src={logo} alt="" height={50} width={50} className="rounded" />
       <div className="flex gap-14">
         <ul className="relative flex right-10 gap-8">
           <li>
-            <Link href="/" className="relative border-b-2 pb-1 border-transparent hover:border-b-2 hover:border-white">Home</Link>
+            <Link
+              href="/"
+              className="relative border-b-2 pb-1 border-transparent hover:border-b-2 hover:border-white"
+            >
+              Home
+            </Link>
           </li>
           <li className="group relative">
             <Link
@@ -59,7 +64,14 @@ export default function Navbar() {
             </div>
           </li>
           <li className="group relative">
-            <Link href="/Contact-us" onMouseEnter={handleConatctHover} onMouseLeave={handleConatctHover} className="relative border-b-2 pb-1 border-transparent hover:border-b-2 hover:border-white">Contact-us</Link>
+            <Link
+              href="/Contact-us"
+              onMouseEnter={handleConatctHover}
+              onMouseLeave={handleConatctHover}
+              className="relative border-b-2 pb-1 border-transparent hover:border-b-2 hover:border-white"
+            >
+              Contact-us
+            </Link>
             <div
               className={`absolute bg-[#556B2F] p-2 mt-8 space-y-2 h-screen w-screen transition-all duration-500  ${
                 isContactHovered ? "left-0 opacity-100" : "left-full opacity-0"
@@ -70,7 +82,12 @@ export default function Navbar() {
           </li>
           {ctx.isLoggedIn && (
             <li>
-              <Link href="/profile" className="relative border-b-2 pb-1 border-transparent hover:border-b-2 hover:border-white">profile</Link>
+              <Link
+                href="/profile"
+                className="relative border-b-2 pb-1 border-transparent hover:border-b-2 hover:border-white"
+              >
+                profile
+              </Link>
             </li>
           )}
         </ul>

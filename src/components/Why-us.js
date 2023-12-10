@@ -11,10 +11,9 @@ import {
 
 export default function WhyUs() {
   return (
-    <div className="py-20 px-5 bg-[#424e48]">
+    <div className="py-8 px-5 bg-[#424e48]">
+      <h1 className="text-center text-white text-xl mb-5 border-b w-1/2 m-auto py-2">Why join us</h1>
 
-      <h1 className="text-center text-white text-xl mb-5">Why join us</h1>
-      
       <div className="grid grid-cols-2 pt-10">
         <div className="flex justify-center">
           <Image src={us} alt="" height={500} width={500} className="rounded" />
