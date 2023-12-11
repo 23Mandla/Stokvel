@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Portfolio({ userData }) {
   return (
-    <div className="w-[80%] h-[80%] border rounded-md bg-white text-black">
+    <div className="w-[75%] h-[80%] border rounded-md bg-white text-black">
       <div className="flex w-screen gap-5 p-10">
         <div className="flex justify-around w-1/3 border-b-2 border-red-400">
           <span className="bg-gray-300 w-screen rounded-sm p-1 text-center">Name</span>

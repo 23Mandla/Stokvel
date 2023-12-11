@@ -10,6 +10,7 @@ import Portfolio from "@/components/Portfolio";
 import Members from "@/components/Members";
 import Performance from "@/components/Performance";
 import Events from "@/components/Events";
+import { FaUsers } from "react-icons/fa6";
 
 export default function ProfilePage() {
   const [userName, setUserName] = useState("Guest");
@@ -126,11 +127,9 @@ export default function ProfilePage() {
           >
             <h1>Events</h1>
           </li>
-          <li className="cursor-pointer">
-            <h1>+{count} members</h1>
-          </li>
-          <li className="cursor-pointer">
-            <h1>+R200 contributions</h1>
+          <li className="flex items-center space-x-1 bg-gray-600 p-1 rounded-full text-gray-400">
+            <h1>+{count}</h1>
+            <FaUsers />
           </li>
         </ul>
         {<div className="pt-16 w-screen h-full pl-14">{renderComponent()}</div>}
