@@ -16,6 +16,7 @@ export default function ProfilePage() {
   const [userSurname, setUserSurname] = useState("");
   const [userData, setUserData] = useState(null);
   const [component, setComponent] = useState(null);
+  const [count, setCount] = useState("");
 
   useEffect(() => {
     const userName = async () => {
@@ -33,6 +34,22 @@ export default function ProfilePage() {
     };
 
     userName();
+  }, []);
+
+  useEffect(() => {
+    const stats = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:3000/api/users/stats"
+        );
+        const count = response.data;
+        setCount(count.count);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    stats();
   }, []);
 
   //handle component rendering
@@ -109,16 +126,10 @@ export default function ProfilePage() {
           >
             <h1>Events</h1>
           </li>
-          <li
-            className="cursor-pointer"
-            
-          >
-            <h1>+200 members</h1>
+          <li className="cursor-pointer">
+            <h1>+{count} members</h1>
           </li>
-          <li
-            className="cursor-pointer"
-            
-          >
+          <li className="cursor-pointer">
             <h1>+R200 contributions</h1>
           </li>
         </ul>
