@@ -13,10 +13,10 @@ export default function Members({ members }) {
         </thead>
         <tbody>
           {members.map((member, index) => (
-            <tr key={index} className="bg-gray-200 border-b border-b-gray-950">
+            <tr key={index} className="bg-gray-200 cursor-pointer hover:bg-sky-700 hover:text-white">
               <td className="border text-center p-1">{member.surname}</td>
               <td className="border text-center p-1">{member.name}</td>
-              <td className="border text-center p-1">R10000</td>
+              <td className="border text-center p-1">R10,000</td>
             </tr>
           ))}
         </tbody>
