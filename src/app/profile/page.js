@@ -62,7 +62,7 @@ export default function ProfilePage() {
         const request = await axios.get(
           "http://localhost:3000/api/users/members"
         );
-        const member = request.data;
+        const member = request.data.data;
         setMembers(member);
       } catch (error) {
         console.log(error);
