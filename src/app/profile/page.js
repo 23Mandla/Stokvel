@@ -18,6 +18,7 @@ export default function ProfilePage() {
   const [userData, setUserData] = useState(null);
   const [component, setComponent] = useState(null);
   const [count, setCount] = useState("");
+  const [members, setMembers] = useState([]);
 
   useEffect(() => {
     const userName = async () => {
@@ -37,6 +38,7 @@ export default function ProfilePage() {
     userName();
   }, []);
 
+  //count number of members registered in a stokvel
   useEffect(() => {
     const stats = async () => {
       try {
@@ -53,6 +55,23 @@ export default function ProfilePage() {
     stats();
   }, []);
 
+  //get members of the stokvel
+  useEffect(() => {
+    const members = async () => {
+      try {
+        const request = await axios.get(
+          "http://localhost:3000/api/users/members"
+        );
+        const member = request.data;
+        setMembers(member);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    members();
+  });
+
   //handle component rendering
   const handleComponentRender = (component) => {
     setComponent(component);
@@ -63,7 +82,7 @@ export default function ProfilePage() {
       case "portfolio":
         return <Portfolio userData={userData} />;
       case "members":
-        return <Members />;
+        return <Members members={members} />;
       case "performance":
         return <Performance />;
       case "events":

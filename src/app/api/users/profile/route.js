@@ -10,7 +10,7 @@ export async function GET(request) {
       const decodedToken = Jwt.verify(token, process.env.SECRETE_TOKEN);
       const user = await User.findById(decodedToken.id);
       if (!user) {
-        return NextResponse.status(404).json({ error: "User not found" });
+        return NextResponse.json({ status: 404, error: "User not found" });
       }
 
       return NextResponse.json({
@@ -20,11 +20,12 @@ export async function GET(request) {
       });
     } catch (error) {
       console.log("Token verification error:", error);
-      return NextResponse.status(404).json({
+      return NextResponse.json({
+        status: 404,
         message: "Token invalid or expired",
       });
     }
   } else {
-    return NextResponse.status(401).json({ error: "No token found" });
+    return NextResponse.json({ status: 401, error: "No token found" });
   }
 }
