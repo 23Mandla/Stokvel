@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Calendar from "react-calendar";
-import 'react-calendar/dist/Calendar.css';
+import "react-calendar/dist/Calendar.css";
 
 export default function Events() {
   const [date, setDate] = useState(new Date());
@@ -21,8 +21,13 @@ export default function Events() {
   };
 
   return (
-    <div className="w-[75%] h-[80%] border rounded-md bg-white text-black pt-14 pl-10">
-      <Calendar onChange={newDate} value={date} />
+    <div className="flex gap-10 w-[75%] h-[80%] border rounded-md bg-white text-black pt-14 pl-10">
+      <di>
+        <Calendar onChange={newDate} value={date}/>
+      </di>
+      <di>
+        <h1 className="text-center text-lg font-bold">Events for toady</h1>
+      </di>
     </div>
   );
 }
