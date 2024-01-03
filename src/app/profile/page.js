@@ -13,7 +13,7 @@ import Events from "@/components/Events";
 import { FaUsers } from "react-icons/fa6";
 
 export default function ProfilePage() {
-  const [userName, setUserName] = useState("Guest");
+  const [userName, setUserName] = useState("");
   const [userSurname, setUserSurname] = useState("");
   const [userData, setUserData] = useState(null);
   const [component, setComponent] = useState(null);

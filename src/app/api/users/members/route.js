@@ -1,8 +1,17 @@
 import User from "@/model/userModel";
 import { NextResponse } from "next/server";
 
+/**
+ * Retrieves user data from the database and returns it as a JSON response.
+ * @param {Request} request - The incoming request object.
+ * @returns {NextResponse} The JSON response containing the user data.
+ */
+
 export async function GET(request) {
+  //cehck if user is logged in
   const token = request.cookies.get("token")?.value || "";
+
+  //if user is logged in, get user data
   if (token) {
     try {
       const user = await User.find({}, { name: 1, surname: 1 });
