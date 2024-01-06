@@ -3,8 +3,10 @@
 import React, { useReducer } from "react";
 import ceo from "/public/business-man.png";
 import Image from "next/image";
+import { FaLinkedin } from "react-icons/fa6";
+import Link from "next/link";
 
-// Reducer function to handle state changes based on action types
+// Reducer function to handle state changes based on action type
 const reducer = (state, action) => {
   switch (action.type) {
     case "CEO":
@@ -26,20 +28,30 @@ export default function Team() {
   });
 
   return (
-    <div className="bg-[#4a513f] text-white p-10">
+    <div className="bg-[#4a513f] text-white p-10 ">
       <h1 className="text-center text-5xl mb-10">Our Team</h1>
-      <div className="flex flex-auto gap-10">
+      <div className="flex flex-row gap-10">
         <div
           className="bg-[rgba(128,0,128,0.5)] border border-white flex flex-col items-center justify-center rounded-lg cursor-pointer w-full overflow-hidden relative"
           onMouseEnter={() => dispatch({ type: "CEO" })}
           onMouseLeave={() => dispatch({ type: "CEO" })}
         >
           <div
-            className={`absolute bg-[rgba(0,0,0,0.6)] h-full w-full transition-all duration-500 rounded-lg  ${
+            className={`absolute bg-[rgba(0,0,0,0.6)] h-full w-full transition-all duration-500 rounded-lg p-5 font-bold text-lg ${
               state.CEO ? "right-0 opacity-100" : "right-full opacity-0"
             }`}
           >
             <h1>Mandla Mbolekwa</h1>
+            <p className="text-orange-500">CEO</p>
+            <Link href="https://www.linkedin.com/">
+              <FaLinkedin className="text-[#0A66C2] text-2xl mt-2" />
+            </Link>
+            <div className="float-right w-[70%]  mt-10 border-l-2 h-[100%] pl-3">
+              <p className="text-sm mt-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut
+              </p>
+            </div>
           </div>
           <Image alt="" src={ceo} width={150} height={150} />
           <div className="mt-5">
@@ -53,15 +65,25 @@ export default function Team() {
           onMouseLeave={() => dispatch({ type: "COO" })}
         >
           <div
-            className={`absolute bg-[rgba(0,0,0,0.6)] h-full w-full transition-all duration-500 rounded-lg  ${
-              state.COO ? "right-0 opacity-100" : "right-full opacity-0"
+            className={`absolute bg-[rgba(0,0,0,0.6)] h-full w-full transition-all duration-500 rounded-lg p-5 font-bold text-lg ${
+              state.COO ? "top-0 opacity-100" : "top-full opacity-0"
             }`}
           >
             <h1>Mandla Mbolekwa</h1>
+            <p className="text-orange-500">CEO</p>
+            <Link href="https://www.linkedin.com/">
+              <FaLinkedin className="text-[#0A66C2] text-2xl mt-2" />
+            </Link>
+            <div className="float-right w-[70%]  mt-10 border-l-2 h-[100%] pl-3">
+              <p className="text-sm mt-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut
+              </p>
+            </div>
           </div>
           <Image alt="" src={ceo} width={150} height={150} />
           <div className="mt-5">
-            <p className="text-4xl">CEO</p>
+            <p className="text-4xl">COO</p>
           </div>
         </div>
 
@@ -71,15 +93,31 @@ export default function Team() {
           onMouseLeave={() => dispatch({ type: "CTO" })}
         >
           <div
-            className={`absolute bg-[rgba(0,0,0,0.6)] h-full w-full transition-all duration-500 rounded-lg  ${
-              state.CTO ? "right-0 opacity-100" : "right-full opacity-0"
+            className={`absolute bg-[rgba(0,0,0,0.6)] h-full w-full transition-all duration-500 rounded-lg p-5 font-bold text-lg ${
+              state.CTO ? "left-0 opacity-100" : "left-full opacity-0"
             }`}
           >
             <h1>Mandla Mbolekwa</h1>
+            <p className="text-orange-500">CTO</p>
+            <Link href="https://www.linkedin.com/">
+              <FaLinkedin className="text-[#0A66C2] text-2xl mt-2" />
+            </Link>
+            <div className="float-right w-[70%]  mt-10 border-l-2 h-[100%] pl-3">
+              <p className="text-sm mt-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut
+              </p>
+            </div>
           </div>
           <Image alt="" src={ceo} width={150} height={150} />
           <div className="mt-5">
-            <p className="text-4xl">CEO</p>
+            <p className="text-4xl">CTO</p>
+          </div>
+        </div>
+
+        <div className="bg-[rgba(128,0,128,0.5)] border border-white flex flex-col items-center justify-center rounded-lg cursor-pointer w-full overflow-hidden relative">
+          <div className="mt-5">
+            <p className="">Meet our incredible team</p>
           </div>
         </div>
       </div>
