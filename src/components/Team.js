@@ -28,9 +28,9 @@ export default function Team() {
   });
 
   return (
-    <div className="bg-[#4a513f] text-white p-10 ">
-      <h1 className="text-center text-5xl mb-10">Our Team</h1>
-      <div className="flex flex-row gap-10">
+    <div className="bg-[#4a513f] text-white p-10">
+      <h1 className="text-center text-5xl mb-14">Our Team</h1>
+      <div className="grid grid-cols-2 gap-10 p-10 w-[65%] m-auto">
         <div
           className="bg-[rgba(128,0,128,0.5)] border border-white flex flex-col items-center justify-center rounded-lg cursor-pointer w-full overflow-hidden relative"
           onMouseEnter={() => dispatch({ type: "CEO" })}
@@ -70,7 +70,7 @@ export default function Team() {
             }`}
           >
             <h1>Mandla Mbolekwa</h1>
-            <p className="text-orange-500">CEO</p>
+            <p className="text-orange-500">COO</p>
             <Link href="https://www.linkedin.com/">
               <FaLinkedin className="text-[#0A66C2] text-2xl mt-2" />
             </Link>
@@ -115,7 +115,7 @@ export default function Team() {
           </div>
         </div>
 
-        <div className="bg-[rgba(128,0,128,0.5)] border border-white flex flex-col items-center justify-center rounded-lg cursor-pointer w-full overflow-hidden relative">
+        <div className="bg-[#556B2F] border border-white flex flex-col items-center justify-center rounded-lg cursor-pointer w-full overflow-hidden relative">
           <div className="mt-5">
             <p className="">Meet our incredible team</p>
           </div>
