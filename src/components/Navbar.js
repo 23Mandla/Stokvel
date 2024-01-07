@@ -3,7 +3,6 @@
 import { useState, useContext } from "react";
 import AuthContext from "@/helpers/auth-context";
 import Link from "next/link";
-import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
