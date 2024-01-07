@@ -53,91 +53,84 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="w-full h-screen p-10 bg-[#dae9e1]">
-      <h1 className="text-center text-gray-700 text-3xl">Sign up form</h1>
-      <div className="relative grid grid-flow-col w-4/5 mx-auto top-24 border border-gray-500 rounded">
-        <div className="flex items-center justify-center bg-[#02291b] text-white">
-          hello
-        </div>
+    <div className="w-full h-screen bg-[#222d27]">
+      <div className="relative  w-1/3 m-auto top-32 border border-gray-500 rounded bg-slate-200">
+        <h1 className="text-xl m-5 text-center">Please complete the fields below</h1>
 
-        <div className="grid justify-center mt-10">
-          <h1 className="text-xl mb-5">Please complete the fields below</h1>
+        <div className="w-1/2 m-auto">
+          <div className="mb-5">
+            <label htmlFor="name" className="block text-lg">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={user.name}
+              onChange={handleChange}
+              placeholder="enter name ..."
+              className="bg-transparent border-2 border-gray-400 p-1 rounded w-[100%]"
+            />
+          </div>
 
-          <div>
-            <div className="mb-5">
-              <label htmlFor="name" className="block text-lg">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={user.name}
-                onChange={handleChange}
-                placeholder="enter name ..."
-                className="bg-transparent border-2 border-gray-400 p-1 rounded"
-              />
-            </div>
+          <div className="mb-5">
+            <label htmlFor="surname" className="block text-lg">
+              Surname
+            </label>
+            <input
+              type="text"
+              id="surname"
+              name="surname"
+              value={user.surname}
+              onChange={handleChange}
+              placeholder="enter surname ..."
+              className="bg-transparent border-2 border-gray-400 p-1 rounded w-[100%]"
+            />
+          </div>
 
-            <div className="mb-5">
-              <label htmlFor="surname" className="block text-lg">
-                Surname
-              </label>
-              <input
-                type="text"
-                id="surname"
-                name="surname"
-                value={user.surname}
-                onChange={handleChange}
-                placeholder="enter surname ..."
-                className="bg-transparent border-2 border-gray-400 p-1 rounded"
-              />
-            </div>
+          <div className="mb-5">
+            <label htmlFor="email" className="block text-lg">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={user.email}
+              onChange={handleChange}
+              placeholder="enter email address ..."
+              className="bg-transparent border-2 border-gray-400 p-1 rounded w-[100%]"
+            />
+          </div>
 
-            <div className="mb-5">
-              <label htmlFor="email" className="block text-lg">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={user.email}
-                onChange={handleChange}
-                placeholder="enter email address ..."
-                className="bg-transparent border-2 border-gray-400 p-1 rounded"
-              />
-            </div>
+          <div className="mb-7">
+            <label htmlFor="password" className="block text-lg">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={user.password}
+              onChange={handleChange}
+              placeholder="enter password ..."
+              className="bg-transparent border-2 border-gray-400 p-1 rounded w-[100%]"
+            />
+          </div>
 
-            <div className="mb-7">
-              <label htmlFor="password" className="block text-lg">
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={user.password}
-                onChange={handleChange}
-                placeholder="enter password ..."
-                className="bg-transparent border-2 border-gray-400 p-1 rounded"
-              />
-            </div>
-
-            <div className="flex gap-10 mb-8">
-              <button
-                className="bg-[#02291b] text-white py-1 px-3 rounded"
-                onClick={submitHandler}
-              >
-                Register
-              </button>
-              <Link
-                href="/login"
-                className="bg-[#02291b] text-white py-1 px-3 rounded"
-              >
-                Login
-              </Link>
-            </div>
+          <div className="flex gap-10 mb-8">
+            <button
+              className="bg-[#02291b] text-white py-1 px-3 rounded"
+              onClick={submitHandler}
+            >
+              Register
+            </button>
+            <Link
+              href="/login"
+              className="bg-[#02291b] text-white py-1 px-3 rounded"
+            >
+              Login
+            </Link>
           </div>
         </div>
       </div>
