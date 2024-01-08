@@ -93,7 +93,7 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="grid grid-cols-7 h-screen w-full text-white bg-slate-800 pt-20 gap-1 overflow-hidden">
+    <div className="grid grid-cols-7 h-screen w-full text-white bg-[#2a3020] pt-20 gap-1 overflow-hidden">
       <div className="bg-[#28282B] col-span-1 pt-3 border-r border-gray-600 overflow-hidden">
         <div className=" flex flex-col justify-center gap-2 cursor-pointer m-auto border-b border-b-gray-600 rounded-sm p-2">
           <Image
@@ -121,7 +121,7 @@ export default function ProfilePage() {
       </div>
 
       <div className="">
-        <ul className="border-b border-gray-500 flex gap-10 pl-16 p-3 w-screen">
+        <ul className="border-b border-gray-500 flex gap-10 pl-16 p-3 pt-4 w-screen">
           <li
             className="cursor-pointer"
             onClick={() => handleComponentRender("portfolio")}
