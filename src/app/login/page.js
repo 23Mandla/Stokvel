@@ -44,61 +44,57 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="w-full h-screen p-10 bg-[#dae9e1]">
-      <h1 className="text-center text-gray-700 text-3xl">Sign up form</h1>
-      <div className="relative grid grid-flow-col w-4/5 mx-auto top-24 border border-gray-500 rounded">
-        <div className="flex items-center justify-center bg-[#02291b] text-white">
-          hello
-        </div>
+    <div className="w-full h-screen p-10 bg-[#222d27]">
+      <div className="relative w-1/3 mx-auto top-24 pt-3 border border-gray-500 rounded bg-slate-100 p-3">
+        <h1 className="text-xl mb-2 text-center border-b-2 border-black pb-1.5 font-bold">
+          Login into stokvel
+        </h1>
+        <form
+          onSubmit={submitHandler}
+          className="w-full space-y-8 py-6 items-center"
+        >
+          <div className="mb-5 w-[80%] m-auto">
+            <label htmlFor="email" className="block text-lg mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={member.email}
+              onChange={handleChange}
+              placeholder="enter email address ..."
+              className="bg-transparent border-2 border-gray-400 p-1 rounded w-[90%]"
+            />
+          </div>
 
-        <div className="grid justify-center mt-10">
-          <h1 className="text-xl mb-8">Login into stokvel</h1>
-          <form onSubmit={submitHandler}>
-            <div className="mb-5">
-              <label htmlFor="email" className="block text-lg">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={member.email}
-                onChange={handleChange}
-                placeholder="enter email address ..."
-                className="bg-transparent border-2 border-gray-400 p-1 rounded"
-              />
-            </div>
+          <div className="mb-5 w-[80%] m-auto">
+            <label htmlFor="password" className="block text-lg mb-2">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={member.password}
+              onChange={handleChange}
+              placeholder="enter password ..."
+              className="bg-transparent border-2 border-gray-400 p-1 rounded w-[90%]"
+            />
+          </div>
 
-            <div className="mb-7">
-              <label htmlFor="password" className="block text-lg">
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={member.password}
-                onChange={handleChange}
-                placeholder="enter password ..."
-                className="bg-transparent border-2 border-gray-400 p-1 rounded"
-              />
-            </div>
-
-            <div className="flex gap-10 mb-8">
-              <button
-                className="bg-[#02291b] text-white py-1 px-3 rounded"
-              >
-                Login
-              </button>
-              <Link
-                href="/signup"
-                className="bg-[#02291b] text-white py-1 px-3 rounded"
-              >
-                Register
-              </Link>
-            </div>
-          </form>
-        </div>
+          <div className="flex justify-center gap-10 mb-8">
+            <button className="bg-[#2a5a3a] text-white py-1 px-5 rounded">
+              Login
+            </button>
+            <Link
+              href="/signup"
+              className="bg-[#2a5a3a] text-white py-1 px-3 rounded"
+            >
+              Register
+            </Link>
+          </div>
+        </form>
       </div>
     </div>
   );

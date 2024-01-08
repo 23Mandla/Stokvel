@@ -11,8 +11,10 @@ import {
 
 export default function WhyUs() {
   return (
-    <div className="pb-24 pt-14 px-10 bg-[#70874a]">
-      <h1 className="text-center text-white text-5xl mb-5 border-b w-1/2 m-auto py-2">Why join us</h1>
+    <div className="pb-24 pt-14 px-10 bg-[#587246]">
+      <h1 className="text-center text-white text-5xl mb-5 border-b w-1/2 m-auto py-2">
+        Why join us
+      </h1>
 
       <div className="grid grid-cols-2 pt-10">
         <div className="flex justify-center">

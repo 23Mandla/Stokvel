@@ -66,15 +66,15 @@ export default function SignUpPage() {
 
   return (
     <div className="w-full h-screen bg-[#222d27]">
-      <div className="relative  w-1/2 m-auto top-32 border border-gray-500 rounded bg-slate-200">
-        <h1 className="text-xl m-5 text-center border-b-2 border-black pb-1 font-bold">
+      <div className="relative  w-1/2 m-auto top-32 border border-gray-500 rounded bg-slate-100">
+        <h1 className="text-xl m-5 text-center border-b-2 border-black pb-1.5 font-bold">
           Please complete the form.
         </h1>
 
-        <div className="w-full m-auto space-y-4 py-6">
+        <div className="w-full m-auto px-5 space-y-4 py-6">
           <div className="grid grid-cols-2 px-7 gap-4">
             <div className="mb-5">
-              <label htmlFor="name" className="block text-lg">
+              <label htmlFor="name" className="block text-lg mb-2">
                 Name
               </label>
               <input
@@ -89,7 +89,7 @@ export default function SignUpPage() {
             </div>
 
             <div className="mb-5">
-              <label htmlFor="surname" className="block text-lg">
+              <label htmlFor="surname" className="block text-lg mb-2">
                 Surname
               </label>
               <input
@@ -106,7 +106,7 @@ export default function SignUpPage() {
 
           <div className="grid grid-cols-2 px-7 gap-4">
             <div className="mb-5">
-              <label htmlFor="email" className="block text-lg">
+              <label htmlFor="email" className="block text-lg mb-2">
                 Email
               </label>
               <input
@@ -121,7 +121,7 @@ export default function SignUpPage() {
             </div>
 
             <div className="mb-7">
-              <label htmlFor="phone" className="block text-lg">
+              <label htmlFor="phone" className="block text-lg mb-2">
                 Phone
               </label>
               <input
@@ -138,7 +138,7 @@ export default function SignUpPage() {
 
           <div className="grid grid-cols-2 px-7 gap-4">
             <div className="mb-7">
-              <label htmlFor="password" className="block text-lg">
+              <label htmlFor="password" className="block text-lg mb-2">
                 Password
               </label>
               <input
@@ -153,7 +153,7 @@ export default function SignUpPage() {
             </div>
 
             <div className="mb-5">
-              <label htmlFor="cPassword" className="block text-lg">
+              <label htmlFor="cPassword" className="block text-lg mb-2">
                 Confirm Password
               </label>
               <input
