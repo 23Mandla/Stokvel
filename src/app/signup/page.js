@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import axios from "axios";
+// import axios from "axios" for API calls;
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -25,6 +25,7 @@ export default function SignUpPage() {
     }));
   }
 
+  // Function to handle form submission
   async function submitHandler(evt) {
     /*try {
       const response =  await axios.post("/api/users/signup", user);
@@ -35,7 +36,15 @@ export default function SignUpPage() {
     }*/
 
     evt.preventDefault();
+
+    // Check if password matches confirm password
+    if (user.password !== user.cPassword) {
+      alert("Password does not match");
+      return;
+    }
+
     try {
+      // Send a POST request to the signup API endpoint
       const response = await fetch("http://localhost:3000/api/users/signup", {
         method: "POST",
         headers: {
@@ -44,6 +53,7 @@ export default function SignUpPage() {
         body: JSON.stringify(user),
       });
 
+      // If the response is successful, redirect to the login page
       if (response.ok) {
         router.push("/login");
       } else {
@@ -57,11 +67,11 @@ export default function SignUpPage() {
   return (
     <div className="w-full h-screen bg-[#222d27]">
       <div className="relative  w-1/2 m-auto top-32 border border-gray-500 rounded bg-slate-200">
-        <h1 className="text-xl m-5 text-center border-b-2 border-black pb-1">
-          Please complete the fields below
+        <h1 className="text-xl m-5 text-center border-b-2 border-black pb-1 font-bold">
+          Please complete the form.
         </h1>
 
-        <div className="w-full m-auto space-y-4 pb-4">
+        <div className="w-full m-auto space-y-4 py-6">
           <div className="grid grid-cols-2 px-7 gap-4">
             <div className="mb-5">
               <label htmlFor="name" className="block text-lg">
@@ -115,7 +125,7 @@ export default function SignUpPage() {
                 Phone
               </label>
               <input
-                type="phone"
+                type="number"
                 id="phone"
                 name="phone"
                 value={user.phone}
@@ -147,7 +157,7 @@ export default function SignUpPage() {
                 Confirm Password
               </label>
               <input
-                type="cPassword"
+                type="password"
                 id="cPassword"
                 name="cPassword"
                 value={user.cPassword}

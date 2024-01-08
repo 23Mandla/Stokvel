@@ -5,14 +5,12 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   try {
-    console.log("CONNECTING TO MONGO");
     await db_connect();
-    console.log("CONNECTED TO MONGO");
-
-    const { name, surname, email, password } = await req.json();
+    const { name, surname, email, phone, password } = await req.json();
 
     //cehck if the user exist
     const user = await User.findOne({ email });
+
     if (user) {
       return NextResponse.json({ error: "User already exists" });
     }
@@ -22,14 +20,13 @@ export async function POST(req) {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     //save new user
-    const newUser = await User.create({
+    await User.create({
       name,
       surname,
       email,
+      phone,
       password: hashedPassword,
     });
-
-    console.log(newUser);
 
     return NextResponse.json(
       { message: "Registered successfully" },
