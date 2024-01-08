@@ -14,6 +14,11 @@ const userSchema = new Schema({
     required: [true, "Please provide email"],
     unique: true,
   },
+  phone: {
+    type: String,
+    required: [true, "Please provide phone number"],
+    unique: true,
+  },
   password: {
     type: String,
     required: [true, "Please provide password"],
