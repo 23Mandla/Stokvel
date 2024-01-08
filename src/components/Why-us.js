@@ -12,7 +12,7 @@ import {
 export default function WhyUs() {
   return (
     <div className="pb-24 pt-14 px-10 bg-[#587246]">
-      <h1 className="text-center text-white text-5xl mb-5 border-b w-1/2 m-auto py-2">
+      <h1 className="text-center text-white text-5xl mb-5 border-b w-1/2 m-auto pb-2.5">
         Why join us
       </h1>
 

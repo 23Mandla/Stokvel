@@ -36,7 +36,7 @@ export default function Portfolio({ userData }) {
               Phone
             </span>
             <span className="bg-gray-400 rounded-sm p-1 text-gray-100 text-center w-full">
-              0788193368
+              +27{userData.phone}
             </span>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 ## This is a stokvel webpage I'm working on using Nextjs and mondodb.
 
-![stokeve image](stokvel.png)
+![stokeve image](stokveel.png)
 
 ## what the app will do
 
