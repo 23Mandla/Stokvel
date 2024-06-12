@@ -2,6 +2,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
+import { set } from "mongoose";
 // import axios from "axios" for API calls;
 
 export default function SignUpPage() {
@@ -16,8 +18,9 @@ export default function SignUpPage() {
     password: "",
     cPassword: "",
   });
+  const [serverResponse, setServerResponse] = useState("");
 
-  //get input reg values
+  //get input registration values
   function handleChange(evt) {
     setUser((previousUsers) => ({
       ...previousUsers,
@@ -44,7 +47,10 @@ export default function SignUpPage() {
     }
 
     try {
-      // Send a POST request to the signup API endpoint
+    if(user.name === "" || user.surname === "" || user.email === "" || user.phone === "" || user.password === "" || user.cPassword === ""){
+      return setServerResponse("All fields are required!")
+      }else{
+          // Send a POST request to the signup API endpoint
       const response = await fetch("http://localhost:3000/api/users/signup", {
         method: "POST",
         headers: {
@@ -53,16 +59,24 @@ export default function SignUpPage() {
         body: JSON.stringify(user),
       });
 
+      const result = await response.json();
+
       // If the response is successful, redirect to the login page
       if (response.ok) {
+        setServerResponse(toast.success(result.message));
         router.push("/login");
       } else {
         throw new Error("Failed to register");
+      }
       }
     } catch (error) {
       console.log(error);
     }
   }
+
+  const handleButtonClick = () => {
+     // Displays a success message
+  };
 
   return (
     <div className="w-full h-screen bg-[#222d27]">
@@ -70,7 +84,7 @@ export default function SignUpPage() {
         <h1 className="text-xl m-5 text-center border-b-2 border-black pb-1.5 font-bold">
           Please complete the form.
         </h1>
-
+        <p className="text-sm text-center text-red-500">{serverResponse}</p>
         <div className="w-full m-auto px-5 space-y-4 py-6">
           <div className="grid grid-cols-2 px-7 gap-4">
             <div className="mb-5">
@@ -178,6 +192,7 @@ export default function SignUpPage() {
             <Link
               href="/login"
               className="bg-[#2a5a3a] text-white py-1 px-5 rounded"
+              onClick={handleButtonClick}
             >
               Login
             </Link>

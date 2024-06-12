@@ -8,11 +8,11 @@ export async function POST(req) {
     await db_connect();
     const { name, surname, email, phone, password } = await req.json();
 
-    //cehck if the user exist
+    //check if the user exist
     const user = await User.findOne({ email });
 
     if (user) {
-      return NextResponse.json({ error: "User already exists" });
+      return NextResponse.json({ message: "User already exists" });
     }
 
     //ecrytpt password

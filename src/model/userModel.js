@@ -31,12 +31,16 @@ const userSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  timeStamps: {
+    type: Date,
+    default: Date.now(),
+  },
   forgotPasswordToken: String,
   forgotPasswordTokenExpiry: Date,
   verifyToken: String,
   verifyTokenExpiry: Date,
 });
 
-const User = mongoose.models.Members || mongoose.model("Members", userSchema);
+const User = mongoose.models.members || mongoose.model("members", userSchema);
 
 export default User;

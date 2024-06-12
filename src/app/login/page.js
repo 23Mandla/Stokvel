@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "@/helpers/auth-context";
-import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
@@ -14,9 +13,9 @@ export default function SignUpPage() {
     email: "",
     password: "",
   });
+  const [serverResponse, setServerResponse] = useState("");
 
   const ctx = useContext(AuthContext);
-
   const router = useRouter();
 
   const handleChange = (evt) => {
@@ -29,17 +28,36 @@ export default function SignUpPage() {
   async function submitHandler(evt) {
     evt.preventDefault();
     try {
-      const response = await axios.post(
+      if (member.password === "" || member.email === "") {
+        return setServerResponse("Email and password are required!");
+      }else{
+             //used the fetch method, easier to handle error messages from the server
+      const response = await fetch("http://localhost:3000/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(member),
+      });
+      
+      /*const response = await axios.post(
         "http://localhost:3000/api/users/login",
         member
-      );
-      console.log("Login success", response.data);
-      toast.success("Login success");
-      router.push("/profile");
-      ctx.onLogIn();
+      );*/
+
+      const result = await response.json();
+      if (response.status === 200) {
+        router.push("/profile");
+        ctx.onLogIn();
+
+      } else {
+        setServerResponse(result.message);
+      }
+      }
+ 
     } catch (error) {
-      console.log("Login failed", error.message);
-      toast.error(error.message);
+      console.log(error)
+      toast.error("Login failed");
     }
   }
 
@@ -49,9 +67,10 @@ export default function SignUpPage() {
         <h1 className="text-xl mb-2 text-center border-b-2 border-black pb-1.5 font-bold">
           Login into stokvel
         </h1>
+        <p className="text-sm text-center text-red-500">{serverResponse}</p>
         <form
           onSubmit={submitHandler}
-          className="w-full space-y-8 py-6 items-center"
+          className="w-full space-y-8 py-6 items-center relative"
         >
           <div className="mb-5 w-[80%] m-auto">
             <label htmlFor="email" className="block text-lg mb-2">

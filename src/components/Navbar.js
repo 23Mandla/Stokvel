@@ -7,6 +7,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import logo from "/public/logo.jpg";
+import Cookies from "js-cookie";
 
 export default function Navbar() {
   const [isAboutHovered, setAboutIsHovered] = useState(false);
@@ -27,6 +28,7 @@ export default function Navbar() {
       await axios.get("api/users/logout");
       router.push("/login");
       ctx.onLogout();
+      Cookies.remove("token");
     } catch (error) {
       console.log(error);
     }
