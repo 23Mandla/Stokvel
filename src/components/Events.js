@@ -21,12 +21,13 @@ export default function Events() {
   };
 
   return (
-    <div className="flex gap-10 w-[75%] h-[80%] border rounded-md bg-white text-black pt-14 pl-10">
+    <div className="grid grid-cols-2 gap-10 w-[75%] h-[80%] border rounded-md bg-white text-black pt-14 pl-10">
       <di>
-        <Calendar onChange={newDate} value={date}/>
+        Activities
       </di>
       <di>
-        <h1 className="text-center text-lg font-bold">Events for toady</h1>
+        <h1 className="mb-5 font-bold text-gray-700">Events</h1>
+        <Calendar onChange={newDate} value={date}/>
       </di>
     </div>
   );

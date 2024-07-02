@@ -88,7 +88,7 @@ export default function ProfilePage() {
       case "events":
         return <Events />;
       default:
-        return null; //return a user landing page
+        return <Events />
     }
   };
 
@@ -115,7 +115,12 @@ export default function ProfilePage() {
 
           <div className="flex items-center gap-2 cursor-pointer">
             <Statement />
-            <h1> Statements</h1>
+            <h1>Statements</h1>
+          </div>
+
+          <div className="flex items-center gap-2 cursor-pointer">
+            <Statement />
+            <h1>Borrow</h1>
           </div>
         </div>
       </div>
@@ -133,18 +138,6 @@ export default function ProfilePage() {
             onClick={() => handleComponentRender("members")}
           >
             <h1>Members</h1>
-          </li>
-          <li
-            className="cursor-pointer"
-            onClick={() => handleComponentRender("performance")}
-          >
-            <h1>Perfomance</h1>
-          </li>
-          <li
-            className="cursor-pointer mr-40"
-            onClick={() => handleComponentRender("events")}
-          >
-            <h1>Events</h1>
           </li>
           <li className="flex items-center space-x-1 bg-gray-600 p-1 rounded-full text-gray-400">
             <h1>+{count}</h1>
